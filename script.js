@@ -147,4 +147,54 @@ const lowToHighBtn = document.getElementById("priceLowToHighBtn");
 const alphabeticalBtn = document.getElementById("alphabeticalBtn");
 
 //  ------ ****** CLICK FUNCTIONS ****** -----
-storeFilter.addEventListener()
+// Store:
+storeFilter.addEventListener("change", function () {
+    console.dir(storeFilter.value);
+    filterAndPopulateResults();
+});
+// Series:
+seriesFilter.addEventListener("change", function () {
+    console.dir(seriesFilter.value);
+    filterAndPopulateResults();
+});
+// Console:
+consoleFilter.addEventListener("change", function () {
+    console.dir(consoleFilter.value);
+    filterAndPopulateResults();
+});
+// Earliest year filter:
+earliestYearFilter.addEventListener("change", function () {
+    console.dir(earliestYearFilter.value);
+    filterAndPopulateResults();
+});
+// latest year filter:
+latestYearFilter.addEventListener("change", function () {
+    console.dir(latestYearFilter.value);
+    filterAndPopulateResults();
+});
+
+//  ----- Sorting button Clicks: -----
+highToLowBtn.addEventListener("click", function () {
+    const filteredProperties = filteredProperties();
+    const sortedProperties = sortedPropertiesByPriceHighToLow(filteredProperties); // Sorts filtered products $$$ - $
+    populateResults(sortedProperties);
+});
+
+lowToHighBtn.addEventListener("click", function () {
+    const filteredProperties = filteredProperties();
+    const sortedProperties = sortedPropertiesByPriceLowToHigh(filteredProperties); // Sorts filtered products $ - $$$
+    populateResults(sortedProperties);
+});
+
+alphabeticalBtn.addEventListener("click", function () {
+    const filteredProperties = filteredProperties();
+    const sortedProperties = sortedPropertiesAlphabetical(filteredProperties); // Sorts filtered products A - Z
+    populateResults(sortedProperties);
+})
+
+// ----- **** FILTERING FUNCTION & LOGIC ******* ------
+function filteredProperties() {
+    const filteredProperties = properties.filter(games => {
+
+    })
+}
