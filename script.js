@@ -2,8 +2,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiY2lhcmFuc2xvdyIsImEiOiJjbHY0ZW91YnYwOGV3MmlwO
 
 
 $(document).ready(function () {
-    const games = [
-        {
+    const games = [{
             id: 1,
             image1: "./img/kirbyfl1.webp",
             image2: "./img/kirbyfl2.webp",
@@ -23,7 +22,7 @@ $(document).ready(function () {
             image3: "./img/minecraft3.webp",
             video: "https://www.youtube.com/embed/HqllNjR7vl8?si=8d2tLdK_nFK7JuI4",
             name: "Minecraft",
-            series: "Minecraft",
+            series: "Other",
             store: "EB Games", // primary store
             year: "2017",
             price: "$59.99",
@@ -114,7 +113,7 @@ $(document).ready(function () {
             image3: "./img/spider3.webp",
             video: "https://www.youtube.com/embed/q4GdJVvdxss?si=h8K3TVMixQfQXAgj",
             name: "Marvel's Spider-Man",
-            series: "Marvel",
+            series: "Other",
             store: "Eb Games", // primary store
             year: "2018",
             price: "$69.99",
@@ -251,7 +250,7 @@ $(document).ready(function () {
             return nameA.localeCompare(nameB);
         })
     }
-    
+
 
     //  ----- ***** POPULATION FUNCTION **** ---- 
     // filter and populate results
@@ -288,7 +287,6 @@ $(document).ready(function () {
                     <p>${games.store}</p>
                     <div class="more-details">
                         <div class="games-amenities">
-                            <p>${games.series} </p>
                             <p>${games.console} </p>
                             <p>Release Year: ${games.year} <i class="fa-solid fa-calendar"></i></p>
                         </div>
@@ -314,6 +312,71 @@ $(document).ready(function () {
         }
 
     }
-    
+
+    // const locations = [{
+    //     name: "JB Hifi - Albany",
+    //     address: "Westfield Albany Shopping Centre, Level 1/219 Don McKinnon Drive, Albany, Auckland 0632",
+    //     long: 174.70802515413266,
+    //     lat: -36.728591090240855
+    // }, ]
+
+    // MAP BOX JS
+    // const map = new mapboxgl.Map({
+    //     container: 'map',
+    //     style: 'mapbox://styles/mapbox/streets-v11',
+    //     center: [174.70802515413266, -36.728591090240855],
+    //     zoom: 5
+    // });
+
+    // map.on('load', function () {
+    //     map.resize();
+    // })
+
+
+    // $("#albJbMap").select(function() {
+    //     flyToLocation([174.9248743841949, -41.20450062736386], 16);
+    // })
+
+
+
+
+
+
+
+    // locations.forEach(locations => {
+    //     const marker = new mapboxgl.Marker()
+    //         .setLngLat([locations.longitude, locations.latitude])
+    //         .setPopup(new mapboxgl.Popup({
+    //                 offset: 25
+    //             })
+    //             .setHTML(`<h3>${locations.name}</h3><p>${locations.address}</p>`))
+    //         .addTo(map);
+    // });
+
+    // locations.forEach((locations, index) => {
+    //     const mapOption = document.createElement('option'); // makes a button
+    //     mapOption.className = 'map-options'; // attach class name
+    //     mapOption.textContent = locations.name; // place the name inside the button
+    //     // onclick to do the flyto:
+    //     mapOption.addEventListener('click', function(){
+    //         map.flyTo({
+    //             center: [locations.longitude, locations.latitude],
+    //             essential: true, //
+    //             zoom: 15
+    //         }); // end of fly to
+    //     });// end of onclick
+    //     // append buttons to the container:
+    //     $(".option").appendChild(mapOption);
+    // })
+
+
+    // function flyToLocation(location, zoom) {
+    //     map.flyTo({
+    //         center: location,
+    //         zoom: zoom,
+    //         essential: true
+    //     })
+    // }
+
 
 });

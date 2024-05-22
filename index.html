@@ -17,10 +17,10 @@
 
 <body>
 
-    <div class="header">
+    <header>
         <h1>Video Games</h1>
         <h2>A Dynamic Product Showcase</h2>
-    </div>
+    </header>
 
     <div class="filter-container">
         <!-- Location -->
@@ -117,9 +117,53 @@
         </div>
     </div>
 
+
+
     <!-- Results Grid -->
     <div class="results" id="results">
         
+    </div>
+
+    <h2 class="map-header">Store Locations</h2>
+    <div class="map-option-select">
+        <div class="map-options">
+            <label for="map">JB Hifi:</label>
+            <select name="map" id="map-options" class="full-width-select">
+                <option value="All" id="JbMap">All</option>
+                <option value="Albany" id="albJbMap ">Albany</option>
+                <option value="Botany" id="botJbMap botJbMarker">Botany</option>
+                <option value="Pukekohe" id="pukJbMap pukJbMarker">Pukekohe</option>
+                <option value="Palmerston North" id="palJbMap palJbMarker">Palmerston North</option>
+                <option value="Queensgate" id="queJbMap queJbMarker">Queensgate</option>
+                <option value="Christchurch" id="chrJbMap chrJbMarker">Christchurch</option>
+            </select>
+    
+        </div>
+        <div class="map-options">
+            <label for="map">EB Games:</label>
+            <select name="map" class="map-options" class="full-width-select">
+                <option value="All" id="EbMap">All</option>
+                <option value="Bayfair" id="bayEbMap bayEbMarker">Bayfair</option>
+                <option value="Rotorua" id="rotEbMap rotEbMarker">Rotorua</option>
+                <option value="Napier" id="napEbMap napEbMarker">Napier</option>
+                <option value="New Plymouth" id="newEbMap newEbMarker">New Plymouth</option>
+                <option value="Wellington" id="welEbMap welEbMarker">Wellington</option>
+                <option value="Blenheim" id="blehEbMap blehEbMarker">Blenheim</option>
+            </select>
+    
+        </div>
+    </div>
+    
+    <div class="map-container">
+        <div id="map"></div>
+        <!-- create empty fivs for my markers -->
+        <div id="albJbMarker"></div>
+        <div id="customMarker2"></div>
+        <div id="markerYoobee activityMarker"></div>
+        <div id="markerEB activityMarker"></div>
+        <div id="markerAnime activityMarker"></div>
+        <div id="markerApoth activityMarker"></div>
+        <div id="markerPita activityMarker"></div>
     </div>
 
 
