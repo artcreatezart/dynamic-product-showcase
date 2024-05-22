@@ -48,11 +48,13 @@ body {
     .filter {
         display: flex;
         gap: 10px;
+
         label {
             font-family: "Play", sans-serif;
             font-weight: 700;
             color: rgb(247, 219, 219);
         }
+
         select {
             font-size: 1em;
         }
@@ -94,5 +96,71 @@ body {
             transition: ease 0.3s;
             color: white;
         }
+    }
+}
+
+.results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 30px 60px 120px 60px;
+
+    .no-results {
+        text-align: center;
+        grid-column: 1/-1;
+    }
+
+    .games {
+        display: flex;
+        flex-direction: column;
+        border-radius: 8px;
+        background-color: white;
+        box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 2px 3px 5px 2px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease;
+        padding: 5px;
+
+    }
+
+    .swiper {
+        width: 100%;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        height: 250px;
+
+        .swiper-wrapper {
+            .games-image {
+                width: 100%;
+                object-fit: contain;
+                height: 250px;
+            }
+        }
+
+        .swiper-pagination {
+            padding: 4px;
+            background:  rgba(141, 7, 70, 0.4);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+        }
+
+        .swiper-pagination-bullet {
+            background:rgb(247, 219, 219);
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .results {
+        grid-template-columns: 1fr;
     }
 }
