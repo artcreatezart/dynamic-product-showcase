@@ -173,6 +173,7 @@ $(document).ready(function () {
         const filteredGames = filterGames();
         const sortedGames = sortGamesByPriceHighToLow(filteredGames); // Sorts filtered products $$$ - $
         populateResults(sortedGames);
+        console.log("working")
 
     });
 
@@ -229,16 +230,17 @@ $(document).ready(function () {
     // ---- **** SORTING FUNCTIONS **** ----
     function sortGamesByPriceHighToLow(games) {
         return games.sort((a, b) => {
-            const priceA = parseFloat(a.price.replace(/\$/g, ), '');
-            const priceB = parseFloat(b.price.replace(/\$/g, ), '');
+            const priceA = parseFloat(a.price.replace(/\$/g, '').replace(/\./g, ''));
+            const priceB = parseFloat(b.price.replace(/\$/g, '').replace(/\./g, ''));
             return priceB - priceA;
+            
         })
     }
 
     function sortGamesByPriceLowToHigh(games) {
         return games.sort((a, b) => {
-            const priceA = parseFloat(a.price.replace(/\$/g, ), '');
-            const priceB = parseFloat(b.price.replace(/\$/g, ), '');
+            const priceA = parseFloat(a.price.replace(/\$/g, '').replace(/\./g, ''));
+            const priceB = parseFloat(b.price.replace(/\$/g, '').replace(/\./g, ''));
             return priceA - priceB;
         })
     }
@@ -313,70 +315,119 @@ $(document).ready(function () {
 
     }
 
-    // const locations = [{
-    //     name: "JB Hifi - Albany",
-    //     address: "Westfield Albany Shopping Centre, Level 1/219 Don McKinnon Drive, Albany, Auckland 0632",
-    //     long: 174.70802515413266,
-    //     lat: -36.728591090240855
-    // }, ]
+    const jbHifiLocations = [{
+            name: "JB Hifi - Queensgate",
+            address: "Westfield Queensgate Shopping Centre, Store 107, Level 1/45 Knights Road, North Island, Lower Hutt 5011",
+            hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
+            longitude: 174.90614375908584,
+            latitude: -41.20964584639414
+        },
+        {
+            name: "JB Hifi - Wellington",
+            address: "62 Victoria Street, Wellington Central, Wellington 6011",
+            hours: "Hours: Monday - Saturday: 9am - 6pm | Sunday: 10am - 5pm ",
+            longitude: 174.77614976740875,
+            latitude: -41.28736663979141
+        },
+    ]
 
-    // MAP BOX JS
-    // const map = new mapboxgl.Map({
-    //     container: 'map',
-    //     style: 'mapbox://styles/mapbox/streets-v11',
-    //     center: [174.70802515413266, -36.728591090240855],
-    //     zoom: 5
-    // });
+    const ebGamesLocations = [{
+            name: "EB Games - Queensgate",
+            address: "45 Knights Road, Queensgate, Lower Hutt 5010 - Located in Queensgate",
+            hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
+            longitude: 174.90759983722404,
+            latitude: -41.209181577720166
+            
+        },
+        {
+            name: "EB Games - Porirua",
+            address: "Shop 205/2 Titahi Bay Road, Tītahi Bay, Porirua 5022",
+            hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 6pm ",
+            longitude: 174.83946716910071,
+            latitude:  -41.136384733582894
+        },
+        {
+            name: "EB Games - Cuba Street",
+            address: "72 Cuba Street, Te Aro, Wellington 6011",
+            hours: "Hours: Monday - Friday: 9am - 6pm | Saturday: 9:30am - 5pm | Sunday: 10am - 5pm ",
+            longitude: 174.77650017736866,
+            latitude: -41.29092852910177
+        },
+    ]
 
-    // map.on('load', function () {
-    //     map.resize();
-    // })
+    // Initialise the map
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [174.82127263600782, -41.252574771451066],
+        zoom: 10
+    });
+
+    const buttonsContainer = document.querySelector('.map-buttons-container');
+
+    // Add markers to the map
+    jbHifiLocations.forEach(jbHifiLocation => {
+        const markerJb = new mapboxgl.Marker({
+                color: 'rgb(255, 196, 0)'
+            })
+            .setLngLat([jbHifiLocation.longitude, jbHifiLocation.latitude])
+
+            .setPopup(new mapboxgl.Popup({
+                    offset: 25
+                })
+                .setHTML(`<h3>${jbHifiLocation.name}</h3><p>${jbHifiLocation.address}</p><p>${jbHifiLocation.hours}</p>`))
+
+            .addTo(map);
+    });
+
+    jbHifiLocations.forEach((jbHifiLocation, index) => {
+        const buttonJb = document.createElement('button');
+        buttonJb.className = 'button-jb';
+        buttonJb.textContent = jbHifiLocation.name;
+        buttonJb.addEventListener('click', function () {
+            map.flyTo({
+                center: [jbHifiLocation.longitude, jbHifiLocation.latitude],
+                essential: true,
+                zoom: 15
+            });
+        });
+        buttonsContainer.appendChild(buttonJb);
+    })
+
+        //  Create buttons:
+    // Get button container
+    
 
 
-    // $("#albJbMap").select(function() {
-    //     flyToLocation([174.9248743841949, -41.20450062736386], 16);
-    // })
+    // Add markers to the map
+    ebGamesLocations.forEach(ebGamesLocation => {
+        const markerEb = new mapboxgl.Marker({
+                color: '#045bc4'
+            })
+            .setLngLat([ebGamesLocation.longitude, ebGamesLocation.latitude])
+
+            .setPopup(new mapboxgl.Popup({
+                    offset: 25
+                })
+                .setHTML(`<h3>${ebGamesLocation.name}</h3><p>${ebGamesLocation.address}</p><p>${ebGamesLocation.hours}</p>`))
+
+            .addTo(map);
+    });
 
 
-
-
-
-
-
-    // locations.forEach(locations => {
-    //     const marker = new mapboxgl.Marker()
-    //         .setLngLat([locations.longitude, locations.latitude])
-    //         .setPopup(new mapboxgl.Popup({
-    //                 offset: 25
-    //             })
-    //             .setHTML(`<h3>${locations.name}</h3><p>${locations.address}</p>`))
-    //         .addTo(map);
-    // });
-
-    // locations.forEach((locations, index) => {
-    //     const mapOption = document.createElement('option'); // makes a button
-    //     mapOption.className = 'map-options'; // attach class name
-    //     mapOption.textContent = locations.name; // place the name inside the button
-    //     // onclick to do the flyto:
-    //     mapOption.addEventListener('click', function(){
-    //         map.flyTo({
-    //             center: [locations.longitude, locations.latitude],
-    //             essential: true, //
-    //             zoom: 15
-    //         }); // end of fly to
-    //     });// end of onclick
-    //     // append buttons to the container:
-    //     $(".option").appendChild(mapOption);
-    // })
-
-
-    // function flyToLocation(location, zoom) {
-    //     map.flyTo({
-    //         center: location,
-    //         zoom: zoom,
-    //         essential: true
-    //     })
-    // }
+    ebGamesLocations.forEach((ebGamesLocation, index) => {
+        const buttonEb = document.createElement('button');
+        buttonEb.className = 'button-eb';
+        buttonEb.textContent = ebGamesLocation.name;
+        buttonEb.addEventListener('click', function () {
+            map.flyTo({
+                center: [ebGamesLocation.longitude, ebGamesLocation.latitude],
+                essential: true,
+                zoom: 15
+            });
+        });
+        buttonsContainer.appendChild(buttonEb);
+    })
 
 
 });
