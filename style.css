@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
     margin: 0;
@@ -39,9 +40,46 @@ header {
     }
 }
 
+#goToMapBtn, #backToTopBtn {
+    position: absolute;
+    border: 1px solid white;
+    position: fixed;
+    z-index: 10;
+    padding: 15px;
+    margin: 15px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    background-color: #8d0746b8;
+    color: white;
+    backdrop-filter: blur(8px);
+    text-transform: uppercase;
+    transition: ease 0.3s;
+}
+
+#goToMapBtn {
+    bottom: 0;
+    left: 0;
+}
+
+#backToTopBtn {
+    bottom: 0;
+    right: 0;
+    .fa-arrow-up {
+        margin-left: 10px;
+    }
+}
+
+#goToMapBtn:hover,
+#backToTopBtn:hover {
+    background-color: #8d0745;
+    transition: ease 0.3s;
+}
+
+
+
 .filter-container {
     background-color: #8d0745;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     justify-content: center;
     gap: 50px;
@@ -53,11 +91,15 @@ header {
         label {
             font-family: "Play", sans-serif;
             font-weight: 700;
+            font-size: 1.3em;
             color: rgb(247, 219, 219);
         }
 
         select {
             font-size: 1em;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
     }
@@ -89,6 +131,9 @@ header {
             border-radius: 2px;
             border: none;
             transition: ease 0.3s;
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
         }
 
         button:hover {
@@ -121,7 +166,40 @@ header {
         -moz-box-shadow: -1px 1px 29px -7px rgba(227, 213, 213, 0.85);
         transition: all 0.3s ease;
         padding: 5px;
-
+        gap: 10px;
+        
+        .games-details {
+            padding: 0 10px 10px 10px;
+            width: 100%;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            h2 {
+                font-family: "Play", sans-serif;  
+                text-transform: uppercase;
+                color: rgb(37, 2, 21);
+                font-size: 1.4em;
+            }
+            p {
+                font-family: "Play", sans-serif;  
+            }
+            .more-details {
+                .games-amenities {
+                    p {
+                        font-family: "Play", sans-serif;
+                          
+                    }
+                }
+                h4 {
+                    font-family: "Press Start 2P", system-ui;
+                    font-size: 0.9em;
+                    letter-spacing: 2px;
+                    margin-top: 10px;
+                    color: rgb(37, 2, 21);
+                }
+            }
+            
+        }
     }
 
     .swiper {
@@ -153,10 +231,12 @@ header {
     }
 }
 
-.button-jb, 
+.button-jb,
 .button-eb {
     padding: 10px;
     margin: 20px;
+    font-family: "Play", sans-serif;
+    font-weight: 500;
 }
 
 .button-jb {
@@ -168,7 +248,7 @@ header {
 
 .button-jb:hover {
     transition: ease 0.3s;
-    background-color:  rgb(255, 196, 0);
+    background-color: rgb(255, 196, 0);
     color: white;
 }
 

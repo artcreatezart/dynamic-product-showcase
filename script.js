@@ -34,7 +34,7 @@ $(document).ready(function () {
             image2: "./img/hitman2.webp",
             image3: "./img/hitman3.webp",
             video: "https://www.youtube.com/embed/Z9Q4wAvWBAg?si=A8crLCfkVLRB9PDa",
-            name: "HitMan Worl of Assassination",
+            name: "HitMan World of Assassination",
             series: "Other",
             store: "JB Hifi", // primary store
             year: "2016",
@@ -76,7 +76,7 @@ $(document).ready(function () {
             name: "Assassin's Creed Mirage",
             series: "Other",
             store: "JB Hifi", // primary store
-            year: "2023crr",
+            year: "2023",
             price: "$58.00",
             console: "PS4"
         },
@@ -88,7 +88,7 @@ $(document).ready(function () {
             video: "https://www.youtube.com/embed/ExWoeRuFWo8?si=U92hVyNXWPhmgvrx",
             name: "Kirby's Return to Dream Land Deluxe",
             series: "Kirby",
-            store: "Eb Games", // primary store
+            store: "EB Games", // primary store
             year: "2011",
             price: "$99.99",
             console: "Nitendo Switch"
@@ -114,7 +114,7 @@ $(document).ready(function () {
             video: "https://www.youtube.com/embed/q4GdJVvdxss?si=h8K3TVMixQfQXAgj",
             name: "Marvel's Spider-Man",
             series: "Other",
-            store: "Eb Games", // primary store
+            store: "EB Games", // primary store
             year: "2018",
             price: "$69.99",
             console: "PS4"
@@ -234,6 +234,7 @@ $(document).ready(function () {
             const priceB = parseFloat(b.price.replace(/\$/g, '').replace(/\./g, ''));
             return priceB - priceA;
             
+
         })
     }
 
@@ -315,6 +316,24 @@ $(document).ready(function () {
 
     }
 
+    document.getElementById('goToMapBtn').addEventListener('click', function () {
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: 'smooth'
+        });
+    });
+
+    document.getElementById('backToTopBtn').addEventListener('click', function() {
+            scrollToTop();
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
     const jbHifiLocations = [{
             name: "JB Hifi - Queensgate",
             address: "Westfield Queensgate Shopping Centre, Store 107, Level 1/45 Knights Road, North Island, Lower Hutt 5011",
@@ -337,14 +356,14 @@ $(document).ready(function () {
             hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
             longitude: 174.90759983722404,
             latitude: -41.209181577720166
-            
+
         },
         {
             name: "EB Games - Porirua",
             address: "Shop 205/2 Titahi Bay Road, Tītahi Bay, Porirua 5022",
             hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 6pm ",
             longitude: 174.83946716910071,
-            latitude:  -41.136384733582894
+            latitude: -41.136384733582894
         },
         {
             name: "EB Games - Cuba Street",
@@ -394,9 +413,9 @@ $(document).ready(function () {
         buttonsContainer.appendChild(buttonJb);
     })
 
-        //  Create buttons:
+    //  Create buttons:
     // Get button container
-    
+
 
 
     // Add markers to the map
