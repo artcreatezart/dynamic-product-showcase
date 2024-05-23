@@ -233,7 +233,7 @@ $(document).ready(function () {
             const priceA = parseFloat(a.price.replace(/\$/g, '').replace(/\./g, ''));
             const priceB = parseFloat(b.price.replace(/\$/g, '').replace(/\./g, ''));
             return priceB - priceA;
-            
+
 
         })
     }
@@ -287,11 +287,11 @@ $(document).ready(function () {
                 </div>
                 <div class="games-details">
                     <h2>${games.name}</h2>
-                    <p>${games.store}</p>
+                    <h5>${games.console} </h5>
                     <div class="more-details">
-                        <div class="games-amenities">
-                            <p>${games.console} </p>
-                            <p>Release Year: ${games.year} <i class="fa-solid fa-calendar"></i></p>
+                        <div class="games-further-details">
+                            <p>${games.store}</p>
+                            <p>Release Year: ${games.year}  <i class="fa-solid fa-calendar"></i></p>
                         </div>
                         <h4>${games.price}</h4>
                     </div>
@@ -323,18 +323,44 @@ $(document).ready(function () {
         });
     });
 
-    document.getElementById('backToTopBtn').addEventListener('click', function() {
-            scrollToTop();
+    document.getElementById('backToTopBtn').addEventListener('click', function () {
+        scrollToTop();
+    });
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
         });
+    }
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
 
-    const jbHifiLocations = [{
+
+    const jbHifiLocations = [
+        {
+            name: "JB Hifi - Albany",
+            address: "Westfield Albany Shopping Centre, Level 1/219 Don McKinnon Drive, Albany, Auckland 0632",
+            hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday - Friday: 9am - 9pm | Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
+            longitude: 174.70806780555927,
+            latitude: -36.72858237844924
+        },
+        {
+            name: "JB Hifi - Bayfair",
+            address: "T8/West Madison Street Corner Maunganui &, Bayfair Shopping Centre Girven Road, Mount Maunganui 3116",
+            hours: "Hours: Saturday - Wednesday: 9am - 6pm | Thursday - Friday: 9am - 9pm",
+            longitude: 176.22315294662423,
+            latitude: -37.67509717032533
+        }, 
+        
+        {
+            name: "JB Hifi - Palmerston North",
+            address: "The Plaza, 102/84 The Square, Palmerston North 4410",
+            hours: "Hours: Monday - Wednesday: 9am - 5:30pm | Thursday: 9am - 9pm | Friday: 9am - 7pm | Saturday: 9am - 5:30pm | Sunday: 10am - 5pm",
+            longitude: 175.61434970444753,
+            latitude: -40.35681947323412
+        },
+        {
+        
             name: "JB Hifi - Queensgate",
             address: "Westfield Queensgate Shopping Centre, Store 107, Level 1/45 Knights Road, North Island, Lower Hutt 5011",
             hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
@@ -348,9 +374,41 @@ $(document).ready(function () {
             longitude: 174.77614976740875,
             latitude: -41.28736663979141
         },
+        {
+            name: "JB Hifi - Riccarton",
+            address: "Westfield Queensgate Shopping Centre, Store 107, Level 1/45 Knights Road, North Island, Lower Hutt 5011",
+            hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
+            longitude: 174.90614375908584,
+            latitude: -41.20964584639414
+        },
+        {
+            name: "JB Hifi - Dunedin",
+            address: "Westfield Queensgate Shopping Centre, Store 107, Level 1/45 Knights Road, North Island, Lower Hutt 5011",
+            hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
+            longitude: 174.90614375908584,
+            latitude: -41.20964584639414
+        }
     ]
 
-    const ebGamesLocations = [{
+    const ebGamesLocations = [
+    
+        {
+            name: "EB Games - Hamilton",
+            address: "Centre Place Shopping Centre Shop 26/501 Victoria Street, Hamilton Central, Hamilton 3204",
+            hours: "Hours: Monday - Saturday: 9am - 6pm | Sunday: 10am - 5pm ",
+            longitude: 175.27859136549193,
+            latitude: -37.77496170335462
+
+        },
+        {
+            name: "EB Games - Whanganui",
+            address: "Trafalgar Square Shopping Centre 100 Taupo Quay, Whanganui 4500",
+            hours: "Hours: Monday - Friday: 9am - 5:30pm | Saturday: 9am - 4pm | Sunday: 10am - 4pm ",
+            longitude: 175.0533420465211,
+            latitude: -39.93333414849232
+
+        },
+        {
             name: "EB Games - Queensgate",
             address: "45 Knights Road, Queensgate, Lower Hutt 5010 - Located in Queensgate",
             hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
@@ -366,87 +424,95 @@ $(document).ready(function () {
             latitude: -41.136384733582894
         },
         {
-            name: "EB Games - Cuba Street",
+            name: "EB Games - Richmond",
+            address: "Richmond Mall, Cnr Queen, Croucher and, Talbot Street, Richmond 7020",
+            hours: "Hours: Monday - Friday: 9am - 6pm | Saturday: 9am - 5pm | Sunday: 10am - 4pm ",
+            longitude:  173.18533630444537,
+            latitude: -41.339762184851544
+        },
+        {
+            name: "EB Games - Northlands",
             address: "72 Cuba Street, Te Aro, Wellington 6011",
             hours: "Hours: Monday - Friday: 9am - 6pm | Saturday: 9:30am - 5pm | Sunday: 10am - 5pm ",
-            longitude: 174.77650017736866,
-            latitude: -41.29092852910177
+            longitude: 172.60927426955172,
+            latitude:  -43.49389252461713
         },
     ]
 
-    // Initialise the map
     const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v11',
         center: [174.82127263600782, -41.252574771451066],
         zoom: 10
     });
-
-    const buttonsContainer = document.querySelector('.map-buttons-container');
-
-    // Add markers to the map
-    jbHifiLocations.forEach(jbHifiLocation => {
-        const markerJb = new mapboxgl.Marker({
-                color: 'rgb(255, 196, 0)'
+    
+    // Function to fly to a location and add a marker
+    function flyToLocation(location, color) {
+        // Add marker
+        new mapboxgl.Marker({
+                color: color
             })
-            .setLngLat([jbHifiLocation.longitude, jbHifiLocation.latitude])
-
-            .setPopup(new mapboxgl.Popup({
-                    offset: 25
-                })
-                .setHTML(`<h3>${jbHifiLocation.name}</h3><p>${jbHifiLocation.address}</p><p>${jbHifiLocation.hours}</p>`))
-
+            .setLngLat([location.longitude, location.latitude])
             .addTo(map);
-    });
-
-    jbHifiLocations.forEach((jbHifiLocation, index) => {
-        const buttonJb = document.createElement('button');
-        buttonJb.className = 'button-jb';
-        buttonJb.textContent = jbHifiLocation.name;
-        buttonJb.addEventListener('click', function () {
-            map.flyTo({
-                center: [jbHifiLocation.longitude, jbHifiLocation.latitude],
-                essential: true,
-                zoom: 15
-            });
+    
+        // Fly to location
+        map.flyTo({
+            center: [location.longitude, location.latitude],
+            essential: true,
+            zoom: 15 // Adjust zoom level as needed
         });
-        buttonsContainer.appendChild(buttonJb);
-    })
 
-    //  Create buttons:
-    // Get button container
-
+        const popup = new mapboxgl.Popup({ offset: 25 })
+        .setHTML(`<h3>${location.name}</h3><p>${location.address}</p><p>${location.hours}</p>`);
+    }
 
 
-    // Add markers to the map
-    ebGamesLocations.forEach(ebGamesLocation => {
-        const markerEb = new mapboxgl.Marker({
-                color: '#045bc4'
-            })
-            .setLngLat([ebGamesLocation.longitude, ebGamesLocation.latitude])
-
-            .setPopup(new mapboxgl.Popup({
-                    offset: 25
-                })
-                .setHTML(`<h3>${ebGamesLocation.name}</h3><p>${ebGamesLocation.address}</p><p>${ebGamesLocation.hours}</p>`))
-
-            .addTo(map);
+    
+    // Add markers for JB Hi-Fi locations
+    jbHifiLocations.forEach(location => {
+        flyToLocation(location, 'rgb(255, 196, 0)'); // Specify color for JB Hi-Fi markers
     });
-
-
-    ebGamesLocations.forEach((ebGamesLocation, index) => {
-        const buttonEb = document.createElement('button');
-        buttonEb.className = 'button-eb';
-        buttonEb.textContent = ebGamesLocation.name;
-        buttonEb.addEventListener('click', function () {
-            map.flyTo({
-                center: [ebGamesLocation.longitude, ebGamesLocation.latitude],
-                essential: true,
-                zoom: 15
-            });
-        });
-        buttonsContainer.appendChild(buttonEb);
-    })
-
+    
+    // Add markers for EB Games locations
+    ebGamesLocations.forEach(location => {
+        flyToLocation(location, '#045bc4'); // Specify color for EB Games markers
+    });
+    
+    // Populate select options for JB Hi-Fi
+    const selectJb = document.getElementById('mapOptionsSelectJb');
+    jbHifiLocations.forEach(jbLocation => {
+        const option = document.createElement('option');
+        option.text = jbLocation.name;
+        option.value = jbLocation.name;
+        selectJb.appendChild(option);
+    });
+    
+    // Event listener for JB Hi-Fi select change
+    selectJb.addEventListener('change', function() {
+        const selectedLocation = this.value;
+        const jbLocation = jbHifiLocations.find(loc => loc.name === selectedLocation);
+        if (jbLocation) {
+            flyToLocation(jbLocation, 'pink'); // Specify color for JB Hi-Fi markers
+        }
+    });
+    
+    // Populate select options for EB Games
+    const selectEb = document.getElementById('mapOptionsSelectEb');
+    ebGamesLocations.forEach(ebLocation => {
+        const option = document.createElement('option');
+        option.text = ebLocation.name;
+        option.value = ebLocation.name;
+        selectEb.appendChild(option);
+    });
+    
+    // Event listener for EB Games select change
+    selectEb.addEventListener('change', function() {
+        const selectedLocation = this.value;
+        const ebLocation = ebGamesLocations.find(loc => loc.name === selectedLocation);
+        if (ebLocation) {
+            flyToLocation(ebLocation, 'blue'); // Specify color for EB Games markers
+        }
+    });
+    
 
 });
