@@ -131,7 +131,125 @@ $(document).ready(function () {
             year: "2022",
             price: "$79.99",
             console: "PS5"
-        }
+        },
+        {
+            id: 11,
+            image1: "./img/west.webp",
+            image2: "./img/west2.webp",
+            image3: "./img/west3.webp",
+            video: "https://www.youtube.com/embed/WpgXz5Z9v-U?si=WHCH1ZLSuhRf7gUL",
+            name: "Horizon Forbidden West",
+            series: "Other",
+            store: "EB Games", // primary store
+            year: "2022",
+            price: "$109.99",
+            console: "PS5"
+        },
+        {
+            id: 12,
+            image1: "./img/red.webp",
+            image2: "./img/red2.webp",
+            image3: "./img/red3.webp",
+            video: "https://www.youtube.com/embed/eaW0tYpxyp0?si=IpwkevzbzN7ynltK",
+            name: "Red Dead Redemption 2",
+            series: "Other",
+            store: "EB Games", // primary store
+            year: "2018",
+            price: "$59.99",
+            console: "PS4"
+        },
+        {
+            id: 13,
+            image1: "./img/it.webp",
+            image2: "./img/it2.webp",
+            image3: "./img/it3.webp",
+            video: "https://www.youtube.com/embed/ohClxMmNLQQ?si=N-fu63MdMyVlluMN",
+            name: "It Takes Two",
+            series: "Other",
+            store: "JB Hifi", // primary store
+            year: "2021",
+            price: "$69.00",
+            console: "Nitendo Switch"
+        },
+        {
+            id: 14,
+            image1: "./img/cozy.webp",
+            image2: "./img/cozy2.webp",
+            image3: "./img/cozy3.webp",
+            video: "https://www.youtube.com/embed/PsrcWUfnyZI?si=J7Y1F76dI42bgBzW",
+            name: "Disney Dreamlight Valley: Cozy Edition",
+            series: "Other",
+            store: "JB Hifi", // primary store
+            year: "2022",
+            price: "$89.00",
+            console: "PS5"
+        },
+        {
+            id: 15,
+            image1: "./img/cod.webp",
+            image2: "./img/cod2.webp",
+            image3: "./img/cod3.webp",
+            video: "https://www.youtube.com/embed/mHDEDDrGYvo?si=J39DPJsOJtIMLjcJ",
+            name: "Call of Duty: Modern Warfare III",
+            series: "Other",
+            store: "EB Games", // primary store
+            year: "2023",
+            price: "$119.99",
+            console: "PS5"
+        },
+        {
+            id: 16,
+            image1: "./img/arc.webp",
+            image2: "./img/arc2.webp",
+            image3: "./img/arc3.webp",
+            video: "https://www.youtube.com/embed/I4RynqpahT8?si=5oSGQq5Ru4KQ74eE",
+            name: "Pokémon™ Legends: Arceus",
+            series: "Other",
+            store: "JB Hifi", // primary store
+            year: "2022",
+            price: "$88.00",
+            console: "Nitendo Switch"
+        },
+        {
+            id: 17,
+            image1: "./img/ava.webp",
+            image2: "./img/ava2.webp",
+            image3: "./img/ava3.webp",
+            video: "https://www.youtube.com/embed/H1D8UnqJp8k?si=hrllY-Me57TbaVRR",
+            name: "Avatar: Frontiers of Pandora",
+            series: "Other",
+            store: "JB Hifi", // primary store
+            year: "2023",
+            price: "$78.00",
+            console: "PS5"
+        },
+        {
+            id: 18,
+            image1: "./img/us.webp",
+            image2: "./img/us2.webp",
+            image3: "./img/us3.webp",
+            video: "https://www.youtube.com/embed/Ye3st9z6jQY?si=_O1-T7lMFfaO493M",
+            name: "The Last of Us Part II",
+            series: "Other",
+            store: "EB Games", // primary store
+            year: "2020",
+            price: "$69.99",
+            console: "PS4"
+        },
+        {
+            id: 19,
+            image1: "./img/fnaf.webp",
+            image2: "./img/fnaf2.webp",
+            image3: "./img/fnaf3.webp",
+            video: "https://www.youtube.com/embed/BJ3cLVRWPFU?si=YDBf2HPVxIQJZeT6",
+            name: "Five Nights at Freddy's: Security Breach",
+            series: "Other",
+            store: "EB Games", // primary store
+            year: "2021f",
+            price: "$59.95",
+            console: "PS4"
+        },
+
 
     ];
 
@@ -336,8 +454,7 @@ $(document).ready(function () {
 
 
 
-    const jbHifiLocations = [
-        {
+    const jbHifiLocations = [{
             name: "JB Hifi - Albany",
             address: "Westfield Albany Shopping Centre, Level 1/219 Don McKinnon Drive, Albany, Auckland 0632",
             hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday - Friday: 9am - 9pm | Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
@@ -350,8 +467,8 @@ $(document).ready(function () {
             hours: "Hours: Saturday - Wednesday: 9am - 6pm | Thursday - Friday: 9am - 9pm",
             longitude: 176.22315294662423,
             latitude: -37.67509717032533
-        }, 
-        
+        },
+
         {
             name: "JB Hifi - Palmerston North",
             address: "The Plaza, 102/84 The Square, Palmerston North 4410",
@@ -360,7 +477,7 @@ $(document).ready(function () {
             latitude: -40.35681947323412
         },
         {
-        
+
             name: "JB Hifi - Queensgate",
             address: "Westfield Queensgate Shopping Centre, Store 107, Level 1/45 Knights Road, North Island, Lower Hutt 5011",
             hours: "Hours: Monday - Wednesday: 9am - 6pm | Thursday: 9am - 9pm | Friday - Saturday: 9am - 6pm | Sunday: 10am - 5:30pm ",
@@ -391,7 +508,7 @@ $(document).ready(function () {
     ]
 
     const ebGamesLocations = [
-    
+
         {
             name: "EB Games - Hamilton",
             address: "Centre Place Shopping Centre Shop 26/501 Victoria Street, Hamilton Central, Hamilton 3204",
@@ -427,7 +544,7 @@ $(document).ready(function () {
             name: "EB Games - Richmond",
             address: "Richmond Mall, Cnr Queen, Croucher and, Talbot Street, Richmond 7020",
             hours: "Hours: Monday - Friday: 9am - 6pm | Saturday: 9am - 5pm | Sunday: 10am - 4pm ",
-            longitude:  173.18533630444537,
+            longitude: 173.18533630444537,
             latitude: -41.339762184851544
         },
         {
@@ -435,7 +552,7 @@ $(document).ready(function () {
             address: "72 Cuba Street, Te Aro, Wellington 6011",
             hours: "Hours: Monday - Friday: 9am - 6pm | Saturday: 9:30am - 5pm | Sunday: 10am - 5pm ",
             longitude: 172.60927426955172,
-            latitude:  -43.49389252461713
+            latitude: -43.49389252461713
         },
     ]
 
@@ -445,16 +562,16 @@ $(document).ready(function () {
         center: [174.82127263600782, -41.252574771451066],
         zoom: 10
     });
-    
+
     // Function to fly to a location and add a marker
     function flyToLocation(location, color) {
         // Add marker
-        new mapboxgl.Marker({
+        const marker = new mapboxgl.Marker({
                 color: color
             })
             .setLngLat([location.longitude, location.latitude])
             .addTo(map);
-    
+
         // Fly to location
         map.flyTo({
             center: [location.longitude, location.latitude],
@@ -464,20 +581,29 @@ $(document).ready(function () {
 
         const popup = new mapboxgl.Popup({ offset: 25 })
         .setHTML(`<h3>${location.name}</h3><p>${location.address}</p><p>${location.hours}</p>`);
+
+
+        marker.setPopup(popup);
+
+        map.flyTo({
+            center: [location.longitude, location.latitude],
+            essential: true,
+            zoom: 15 // Adjust zoom level as needed
+        });
     }
 
 
-    
+
     // Add markers for JB Hi-Fi locations
     jbHifiLocations.forEach(location => {
         flyToLocation(location, 'rgb(255, 196, 0)'); // Specify color for JB Hi-Fi markers
     });
-    
+
     // Add markers for EB Games locations
     ebGamesLocations.forEach(location => {
         flyToLocation(location, '#045bc4'); // Specify color for EB Games markers
     });
-    
+
     // Populate select options for JB Hi-Fi
     const selectJb = document.getElementById('mapOptionsSelectJb');
     jbHifiLocations.forEach(jbLocation => {
@@ -486,16 +612,16 @@ $(document).ready(function () {
         option.value = jbLocation.name;
         selectJb.appendChild(option);
     });
-    
+
     // Event listener for JB Hi-Fi select change
-    selectJb.addEventListener('change', function() {
+    selectJb.addEventListener('change', function () {
         const selectedLocation = this.value;
         const jbLocation = jbHifiLocations.find(loc => loc.name === selectedLocation);
         if (jbLocation) {
-            flyToLocation(jbLocation, 'pink'); // Specify color for JB Hi-Fi markers
+            flyToLocation(jbLocation, 'rgb(255, 196, 0)'); // Specify color for JB Hi-Fi markers
         }
     });
-    
+
     // Populate select options for EB Games
     const selectEb = document.getElementById('mapOptionsSelectEb');
     ebGamesLocations.forEach(ebLocation => {
@@ -504,15 +630,15 @@ $(document).ready(function () {
         option.value = ebLocation.name;
         selectEb.appendChild(option);
     });
-    
+
     // Event listener for EB Games select change
-    selectEb.addEventListener('change', function() {
+    selectEb.addEventListener('change', function () {
         const selectedLocation = this.value;
         const ebLocation = ebGamesLocations.find(loc => loc.name === selectedLocation);
         if (ebLocation) {
-            flyToLocation(ebLocation, 'blue'); // Specify color for EB Games markers
+            flyToLocation(ebLocation, '#045bc4'); // Specify color for EB Games markers
         }
     });
-    
+
 
 });

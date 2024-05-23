@@ -203,8 +203,9 @@ header {
                     margin-top: 20px;
                     color: rgb(37, 2, 21);
                 }
+
                 .games-further-details {
-                    
+
                     p {
                         font-family: "Play", sans-serif;
                         font-weight: 400;
@@ -212,7 +213,7 @@ header {
 
                     }
                 }
-                
+
 
 
             }
@@ -251,23 +252,55 @@ header {
 
 #map {
     width: 100%;
-    height: 600px;
+    height: 700px;
 }
 
 .map-header {
     margin-left: 20px;
-    font-size: 2em;
+    font-size: 3em;
     color: #8d0745;
     font-family: "Play", sans-serif;
     font-weight: 400;
 }
 
 
-/* .map-option-select {
+.map-option-select {
     display: flex;
     gap: 50px;
     margin: 20px;
-} */
+    font-family: "Play", sans-serif;
+
+
+    .map-options {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+
+        label {
+            font-size: 1.5em;
+        }
+
+        select {
+            font-size: 1em;
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            border-radius: 5px;
+            padding: 5px;
+            border: 2px solid #8d0745;
+
+        }
+
+        #mapOptionsSelectJb {
+            background-color: rgb(252, 248, 233);
+            border: 2px solid rgb(255, 196, 0);
+        }
+        #mapOptionsSelectEb {
+            background-color: #f0f7ff;
+            border: 2px solid #045bc4;
+        }
+    }
+}
 
 /* TABLET MEDIA QUERIE */
 @media screen and (max-width: 1200px) {
@@ -280,9 +313,11 @@ header {
     .filter-container {
         flex-direction: column;
         align-items: center;
+        gap: 20px;
 
         .filter {
             flex-direction: column;
+
             select {
                 width: 400px;
             }
@@ -291,6 +326,7 @@ header {
 
     .results {
         grid-template-columns: repeat(2, 1fr);
+
         .games {
             .games-details {
                 h2 {
@@ -298,7 +334,7 @@ header {
                 }
             }
         }
-        
+
     }
 }
 
@@ -314,12 +350,34 @@ header {
 
     .results {
         grid-template-columns: 1fr;
+
         .games {
+            flex-direction: row;
+
             .games-details {
+                padding: 10px;
+
                 h2 {
-                    height: 40px;
+                    height: 80px;
                 }
+
             }
+        }
+    }
+
+    .map {
+        height: 500px;
+    }
+
+    .map-option-select {
+        flex-direction: column;
+        /* width: 70%; */
+        gap: 20px;
+        align-items: start;
+
+        .map-options {
+            flex-direction: column;
+            align-items: start;
         }
     }
 
@@ -327,5 +385,5 @@ header {
         max-width: 300px;
     }
 
-    
+
 }
